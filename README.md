@@ -30,13 +30,13 @@ The team — competing under the name **SITTians**, representing the **SUPARCO I
 
 | Member | Responsibility |
 |---|---|
-| Junaid Sultan Ali (Supervisor/Team Lead) | Mechanical structure & descent control design |
-| **Qaisar Khan** | **Electronics, Sensor subsystem & Electrical Power System (EPS)** |
-| Hamza Ahmed | Electronics, Sensor subsystem & EPS |
-| Muhammad Usman, Dilawar Khan | Programming, communication, flight software & GCS |
-| Abdul Jabbar | Mechanical/structure support |
+| Junaid Sultan Ali | (Supervisor/Team Lead) |
+| **Qaisar Khan** | **Electronics soldering and testing, Sensor subsystems, EPS, flight software & GCS** |
+| Hamza Ahmed | EPS, Programming/flight software & GCS, Sensor subsystem & EPS |
+| Muhammad Usman, Dilawar Khan | Mechanical/structure support |
+| Abdul Jabbar | Communication, PCB designing |
 
-My primary contributions were the **sensor subsystem** (BMP-280, MPU-6050 integration) and the **electrical power system** design (battery management, voltage regulation, power distribution) — see [`hardware/pcb/CANSAT_EPS`](hardware/pcb/CANSAT_EPS) and [`hardware/pcb/CANSAT_SENSOR`](hardware/pcb/CANSAT_SENSOR).
+My primary contributions were **electronics soldering & testing, the sensor subsystem, the Electrical Power System (EPS)**, and work on the **flight software and ground control station (GCS)** — see [`hardware/pcb/CANSAT_EPS`](hardware/pcb/CANSAT_EPS), [`hardware/pcb/CANSAT_SENSOR`](hardware/pcb/CANSAT_SENSOR), and [`firmware/GCS`](firmware/GCS).
 
 ## 🛠️ System Architecture
 
@@ -88,13 +88,27 @@ Full derivation: [`docs/Final_Project_Report.pdf`](docs/Final_Project_Report.pdf
 ├── hardware/
 │   ├── pcb/                    # Altium schematic + PCB layout files
 │   └── subsystem-schematics/   # Block diagrams (power, comm, sensor, structure, recovery, GCS)
-├── docs/                  # PDR, CDR, Final Project Report, competition guidelines
-└── media/                 # Mission profile diagram (+ video linked below)
+├── docs/
+│   └── certificates/      # Award certificate PDF scans
+└── media/
+    └── certificates/      # Award certificate images (shown below)
 ```
 
 ## 🎥 Flight Test Video & Photos
 
 📹 [Watch the flight test video and view build photos](https://drive.google.com/drive/u/0/folders/1vkQAq4ylp5WScTySMpFzcRtd9SzQPtEW) *(hosted on Google Drive due to file size)*
+
+## 🏅 Certificates & Recognition
+
+<p align="center">
+  <img src="media/certificates/iran_cansat_2nd_place.jpg" alt="2nd Place - 10th International Iran CanSat Competition" width="45%">
+  <img src="media/certificates/best_project_award_SITT.jpg" alt="Best Project Award - SITT Final Year Projects 2024" width="45%">
+</p>
+
+- **2nd Place**, Remote Sensing-Communication class — 10th International Iran CanSat Competition 2024, Aerospace Research Institute
+- **Best Project Award**, SITT Final Year Projects 2024, awarded by SUPARCO Institute of Technical Training
+
+Full-resolution scans: [`docs/certificates`](docs/certificates)
 
 ## 📄 Documentation
 
