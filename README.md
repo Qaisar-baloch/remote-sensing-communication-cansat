@@ -117,9 +117,5 @@ Full-resolution scans: [`docs/certificates`](docs/certificates)
 - [Final Project Report](docs/Final_Project_Report.pdf) — full design rationale, test results, and complete firmware listing
 - [Competition Guidelines](docs/Competition_Guidelines.pdf)
 
-## 🙏 Acknowledgments
-
-Built at the SUPARCO Institute of Technical Training (SITT) under the guidance of Director SITT (Ahson Ansari), DH Electronics (Sohail Ahmed), Danish-ul-Khairi, Umair Siddique, and supervisor Junaid Sultan, with image processing support from Sir Haseeb's group and fabrication support from the Mechanical Department and SETC PCB Lab.
-
 ---
 *This project was developed as part of the Diploma Associate Engineering (Electronics) program, submitted October 2024.*
