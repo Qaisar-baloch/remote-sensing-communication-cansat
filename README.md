@@ -31,7 +31,7 @@ The team — competing under the name **SITTians**, representing the **SUPARCO I
 | Member | Responsibility |
 |---|---|
 | Junaid Sultan Ali | (Supervisor/Team Lead) |
-| **Qaisar Khan** | **Electronics soldering and testing, Sensor subsystems, EPS, flight software & GCS ** |
+| **Qaisar Khan** | **Electronics soldering and testing, Sensor subsystems, EPS, flight software & GCS** |
 | Hamza Ahmed |EPS Programming/ flight software & GCS  , Sensor subsystem & EPS |
 | Muhammad Usman, Dilawar Khan |Mechanical/structure support|
 | Abdul Jabbar | communication, pcb designing |
