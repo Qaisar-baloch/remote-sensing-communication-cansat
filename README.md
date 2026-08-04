@@ -30,11 +30,11 @@ The team — competing under the name **SITTians**, representing the **SUPARCO I
 
 | Member | Responsibility |
 |---|---|
-| Junaid Sultan Ali (Supervisor/Team Lead) | Mechanical structure & descent control design |
-| **Qaisar Khan** | **Electronics, Sensor subsystem & Electrical Power System (EPS)** |
-| Hamza Ahmed | Electronics, Sensor subsystem & EPS |
-| Muhammad Usman, Dilawar Khan | Programming, communication, flight software & GCS |
-| Abdul Jabbar | Mechanical/structure support |
+| Junaid Sultan Ali (Supervisor/Team Lead) |
+| **Qaisar Khan** | **Electronics, Sensor subsystem & Electrical Power System (EPS Programming / flight software & GCS )** |
+| Hamza Ahmed |EPS Programming/ flight software & GCS  , Sensor subsystem & EPS |
+| Muhammad Usman, Dilawar Khan |Mechanical/structure support|
+| Abdul Jabbar | communication, pcb designing |
 
 My primary contributions were the **sensor subsystem** (BMP-280, MPU-6050 integration) and the **electrical power system** design (battery management, voltage regulation, power distribution) — see [`hardware/pcb/CANSAT_EPS`](hardware/pcb/CANSAT_EPS) and [`hardware/pcb/CANSAT_SENSOR`](hardware/pcb/CANSAT_SENSOR).
 
