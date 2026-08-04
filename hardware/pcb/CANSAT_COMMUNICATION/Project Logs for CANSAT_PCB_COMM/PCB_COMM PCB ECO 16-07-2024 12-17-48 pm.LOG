@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetB1_6 Pin=R2-2
+Removed Member From Class: ClassName=SCHEMATIC_COMM Member=R1
+Removed Member From Class: ClassName=SCHEMATIC_COMM Member=R2
+Change Component Designator: OldDesignator=22 NewDesignator=U2
+Added Pin To Net: NetName=NetB1_6 Pin=U1-1
+Added Pin To Net: NetName=NetU1_4 Pin=U1-4
+Added Pin To Net: NetName=NetU1_4 Pin=U2-16
+Added Net: Name=NetU1_4

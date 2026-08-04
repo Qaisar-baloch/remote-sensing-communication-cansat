@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetB1_7 Pin=U2-1
+Removed Pin From Net: NetName=NetB1_7 Pin=U2-9
+Removed Pin From Net: NetName=NetB1_7 Pin=U2-16
+Added Class: Name=SCHEMATIC_COMM

@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [CANSAT_PCB_COMM.PrjPcb]
+   Generated File[PCB_COMM.TXT]
+   Generated File[PCB_COMM.LDP]
+   Generated File[PCB_COMM.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 11:44:46 am On 12/07/2024

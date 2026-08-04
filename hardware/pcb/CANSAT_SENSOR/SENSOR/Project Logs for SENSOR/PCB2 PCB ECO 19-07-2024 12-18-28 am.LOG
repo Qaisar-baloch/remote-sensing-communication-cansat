@@ -1,0 +1,22 @@
+Added Component: Designator=B1(bus right)
+Added Component: Designator=B2(bus left)
+Added Component: Designator=U1(MPU 9250)
+Added Component: Designator=U2(BMP 280)
+Added Pin To Net: NetName=NetB1_6 Pin=B1-6
+Added Pin To Net: NetName=NetB1_6 Pin=U1-4
+Added Pin To Net: NetName=NetB1_6 Pin=U2-4
+Added Net: Name=NetB1_6
+Added Pin To Net: NetName=NetB1_7 Pin=B1-7
+Added Pin To Net: NetName=NetB1_7 Pin=U1-3
+Added Pin To Net: NetName=NetB1_7 Pin=U2-3
+Added Net: Name=NetB1_7
+Added Pin To Net: NetName=NetB2_5 Pin=B2-5
+Added Pin To Net: NetName=NetB2_5 Pin=U1-1
+Added Pin To Net: NetName=NetB2_5 Pin=U1-1
+Added Pin To Net: NetName=NetB2_5 Pin=U2-1
+Added Pin To Net: NetName=NetB2_5 Pin=U2-1
+Added Net: Name=NetB2_5
+Added Pin To Net: NetName=NetB2_7 Pin=B2-7
+Added Pin To Net: NetName=NetB2_7 Pin=U1-2
+Added Pin To Net: NetName=NetB2_7 Pin=U2-2
+Added Net: Name=NetB2_7

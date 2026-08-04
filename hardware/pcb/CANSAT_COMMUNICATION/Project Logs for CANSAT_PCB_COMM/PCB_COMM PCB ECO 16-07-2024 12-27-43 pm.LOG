@@ -1,0 +1,26 @@
+Added Component: Designator=B1(HDR1X7)
+Added Component: Designator=B2(HDR1X7)
+Added Pin To Net: NetName=NetB1_1 Pin=B1-1
+Added Net: Name=NetB1_1
+Added Pin To Net: NetName=NetB1_2 Pin=B1-2
+Added Net: Name=NetB1_2
+Added Pin To Net: NetName=NetB1_3 Pin=B1-3
+Added Net: Name=NetB1_3
+Added Pin To Net: NetName=NetB1_5 Pin=B1-5
+Added Net: Name=NetB1_5
+Added Pin To Net: NetName=NetB1_6 Pin=B1-6
+Added Net: Name=NetB1_6
+Added Pin To Net: NetName=NetB1_7 Pin=B1-7
+Added Net: Name=NetB1_7
+Added Pin To Net: NetName=NetB2_1 Pin=B2-1
+Added Net: Name=NetB2_1
+Added Pin To Net: NetName=NetB2_2 Pin=B2-2
+Added Net: Name=NetB2_2
+Added Pin To Net: NetName=NetB2_3 Pin=B2-3
+Added Net: Name=NetB2_3
+Added Pin To Net: NetName=NetB2_4 Pin=B2-4
+Added Net: Name=NetB2_4
+Added Pin To Net: NetName=NetB2_5 Pin=B2-5
+Added Net: Name=NetB2_5
+Added Net: Name=NetU1_4
+Added Class: Name=SCHEMATIC_COMM

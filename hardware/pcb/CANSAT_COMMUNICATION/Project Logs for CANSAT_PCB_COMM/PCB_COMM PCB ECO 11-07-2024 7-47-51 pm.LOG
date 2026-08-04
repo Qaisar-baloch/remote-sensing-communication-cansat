@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=NetB1_7 Pin=U2-2
+Added Pin To Net: NetName=NetB1_7 Pin=U2-9
+Added Room: Name=SCHEMATIC_COMM

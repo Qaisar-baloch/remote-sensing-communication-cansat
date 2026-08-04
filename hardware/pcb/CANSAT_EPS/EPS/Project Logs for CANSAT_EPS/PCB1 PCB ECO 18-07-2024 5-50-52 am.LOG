@@ -1,0 +1,12 @@
+Added Component: Designator=U1(7805)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/AZ1117EH-5.0TRG1/Diodes%20Inc./view-part/795858/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "AZ1117EH-5.0TRG1DICT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AZ1117EH-5.0TRG1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-223 Diodes Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/AZ1117EH-5.0TRG1/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/AZ1117EH-5.0TRG1/Diodes%20Inc./view-part/795858/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_11 Pin=U1-1
+Added Pin To Net: NetName=NetB1_6 Pin=U1-3
+Added Pin To Net: NetName=NetB1_4 Pin=U1-4

@@ -1,0 +1,6 @@
+Added Component: Designator=U1(MPU 9250)
+Added Pin To Net: NetName=NetB2_5 Pin=U1-1
+Added Pin To Net: NetName=NetB2_5 Pin=U1-1
+Added Pin To Net: NetName=NetB2_7 Pin=U1-2
+Added Pin To Net: NetName=NetB1_7 Pin=U1-3
+Added Pin To Net: NetName=NetB1_6 Pin=U1-4
