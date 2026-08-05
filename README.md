@@ -118,4 +118,4 @@ Full-resolution scans: [`docs/certificates`](docs/certificates)
 - [Competition Guidelines](docs/Competition_Guidelines.pdf)
 
 ---
-*This project was developed as part of the Diploma Associate Engineering (Electronics) program, submitted October 2024.*
+*This project was developed as part of the Diploma Associate Engineering (Electronics) program, specifically for taking part and competing in the 10th International Iran Cansat competition, submitted October 2024.*
