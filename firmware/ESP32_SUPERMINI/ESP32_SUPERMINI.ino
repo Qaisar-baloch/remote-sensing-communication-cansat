@@ -5,8 +5,6 @@
 EspSoftwareSerial::UART ss;            // Used to define swSer
 HardwareSerial cam_s(0);
 
-const char* ssid = "CAM";
-const char* password = "HAMZA154657";
 const char* serverUrl = "http://192.168.4.1/image.jpg";  // URL for the image
 static const int RXPin = 11, TXPin = 10;
 int packet = 0;
