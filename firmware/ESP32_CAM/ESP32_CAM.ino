@@ -16,8 +16,6 @@ TaskHandle_t log_handle;
 TaskHandle_t test_acquire_image_handle;
 TaskHandle_t warmup_handle;
 
-const char* ssid = "CAM";
-const char* password = "HAMZA154657";
 byte rec = 0x00;
 String rec_string ;
 String pic = "/Image_0.jpg";
