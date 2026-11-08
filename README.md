@@ -1,121 +1,129 @@
-# Remote Sensing-Communication CanSat 🛰️
+# Remote Sensing Communication CanSat 🛰️
 
-**🥈 2nd Place — Remote Sensing-Communication Class, 10th International Iran CanSat Competition 2024**
-*Organized by the Aerospace Research Institute, Ministry of Science, Research and Technology*
+**2nd Place — 10th International Iran CanSat Competition 2024**  
+**Best Project of the Year — SUPARCO Institute of Technical Training**
 
-A fully self-designed and built CanSat (a "satellite" packed inside a soda-can-sized envelope) that measures atmospheric data, captures images during descent, performs onboard target detection, and transmits everything to a custom ground station in real time — built from scratch by a team of first-time competitors.
+The Remote Sensing Communication CanSat was developed as the final-year project for the Diploma of Associate Engineering (Electronics) program at SUPARCO Institute of Technical Training. The team built a can-sized satellite simulation model for the 2024 international competition.
 
-![Mission Profile](media/mission_profile.png)
+The repository contains project documentation, firmware, Altium PCB design files, subsystem diagrams and build photographs.
 
----
+> **Project attribution:** this was a team project. The role described below is Qaisar Khan's confirmed contribution, not a claim that one person completed every subsystem.
 
-## 📋 Mission Overview
+## My role and contributions
 
-The CanSat is deployed from a drone at ~300 m altitude, descends under a custom parachute, and during descent must:
+I served as **Project Lead**. My confirmed work included:
 
-- Measure **temperature, air pressure, altitude**, and (bonus) humidity/orientation
-- Capture **at least 3 images** of ground targets during descent
-- Detect the **enclosed area and color** of ground targets via image processing
-- Transmit **all telemetry in real time** to a self-built ground station over LoRa
-- Achieve a **safe landing** (descent rate ≤ 5 m/s) as close as possible to the target area
-- Declare its position after landing via an onboard beacon
+- Coordinating the project work and supporting the team.
+- Electronics hardware work.
+- Component stuffing and soldering.
+- Hardware assembly and testing.
+- Power-subsystem calculations, design and simulations.
+- Sensor-subsystem coding, interfacing and testing.
+- Preparing project documentation.
 
-Full mission requirements are defined by the competition organizers — see [`docs/Competition_Guidelines.pdf`](docs/Competition_Guidelines.pdf).
+I am not using this README to claim sole ownership of all firmware, ground-station, mechanical or communication work. The repository contains contributions and artifacts from the wider project team.
 
-## 🏆 Result
+## Competition recognition
 
-The team — competing under the name **SITTians**, representing the **SUPARCO Institute of Technical Training (SITT)** — placed **2nd internationally** in the Remote Sensing-Communication class, in their first-ever CanSat competition.
+- **2nd Place**, Remote Sensing-Communication class, 10th International Iran CanSat Competition 2024, organized by the Aerospace Research Institute, Ministry of Science, Research and Technology.
+- **Best Project of the Year**, SUPARCO Institute of Technical Training.
 
-## 👥 Team & My Role
+Award and team certificate scans are stored in [docs/certificates](docs/certificates).
 
-| Member | Responsibility |
+## System overview
+
+The project documentation describes a CanSat platform with sensing, telemetry, imaging and recovery subsystems. The documented hardware includes:
+
+| Subsystem | Components / implementation documented in this repository |
 |---|---|
-| Junaid Sultan Ali | (Supervisor/Team Lead) |
-| **Qaisar Khan** | **Electronics soldering and testing, Sensor subsystems, EPS, flight software & GCS** |
-| Hamza Ahmed | EPS, Programming/flight software & GCS, Sensor subsystem & EPS |
-| Muhammad Usman, Dilawar Khan | Mechanical/structure support |
-| Abdul Jabbar | Communication, PCB designing |
+| Main controller | ESP32 family boards |
+| Sensors | BMP280 pressure / temperature sensor; MPU6050 inertial sensor |
+| Position | NEO-6M GPS module |
+| Imaging payload | ESP32-CAM |
+| Telemetry | LoRa SX1278 radio link |
+| Power | Battery and regulated power subsystem |
+| Recovery | Parachute-based descent system |
 
-My primary contributions were **electronics soldering & testing, the sensor subsystem, the Electrical Power System (EPS)**, and work on the **flight software and ground control station (GCS)** — see [`hardware/pcb/CANSAT_EPS`](hardware/pcb/CANSAT_EPS), [`hardware/pcb/CANSAT_SENSOR`](hardware/pcb/CANSAT_SENSOR), and [`firmware/GCS`](firmware/GCS).
+Refer to the design reviews and final report for detailed design assumptions, wiring, calculations and competition constraints. Component configuration and test results should be read from the relevant project documents rather than inferred from this summary.
 
-## 🛠️ System Architecture
+### Subsystem diagrams
 
-The CanSat is built around a stacked 4-PCB design (Power / Communication / Sensor / Payload) inside a 3D-printed, hollow hexagon-perforated shell that keeps antennas and GPS unobstructed while staying under the 350 g / 66×115 mm competition limits.
+The repository includes diagrams for the full system and individual subsystems:
 
-| Subsystem | Key Components |
-|---|---|
-| **Compute** | ESP32-WROOM (main flight controller) + ESP32-C3 SuperMini |
-| **Sensors** | BMP-280 (pressure/altitude), MPU-6050 (orientation/IMU), NEO-6M (GPS) |
-| **Camera/Payload** | ESP32-CAM (1080×640 @ up to 60 fps, onboard SD storage) |
-| **Communication** | LoRa SX-1278 (433 MHz, up to 10 km rural range, <100 mW Tx) |
-| **Recovery** | Custom flat/hexagonal parachute, sized for ≤5 m/s descent (achieved ~4.5 m/s) |
-| **Power** | 2S Li-ion battery + BMS, regulated 3.3 V / 5 V rails |
-| **Beacon** | Buzzer for post-landing location |
+- [Overall subsystem layout](hardware/subsystem-schematics/SUBSYSTEMS.png)
+- [Power subsystem](hardware/subsystem-schematics/power.png)
+- [Communication subsystem](hardware/subsystem-schematics/COMM.png)
+- [Sensor subsystem](hardware/subsystem-schematics/SENSOR.png)
+- [Camera subsystem](hardware/subsystem-schematics/CAMERA.png)
+- [Ground-station diagram](hardware/subsystem-schematics/GCS.png)
+- [Recovery subsystem](hardware/subsystem-schematics/recovery.png)
+- [Structure diagram](hardware/subsystem-schematics/Structure.png)
 
-Subsystem block diagrams: [`hardware/subsystem-schematics`](hardware/subsystem-schematics)
-PCB schematics & layouts (Altium): [`hardware/pcb`](hardware/pcb)
+## Firmware and hardware repository map
 
-## 💻 Firmware
-
-| Folder | Runs on | Purpose |
-|---|---|---|
-| [`firmware/ESP32_SUPERMINI`](firmware/ESP32_SUPERMINI) | ESP32-C3 SuperMini | Sensor polling, RTC, CSV telemetry framing, LoRa TX, triggers image capture |
-| [`firmware/ESP32_CAM`](firmware/ESP32_CAM) | ESP32-CAM | RTOS-based image capture (5 frames/descent) to onboard SD, serial data logging |
-| [`firmware/GCS`](firmware/GCS) | Ground station ESP32 | LoRa receiver, serial telemetry passthrough |
-
-Telemetry format (alpha-recovery order, per competition spec):
-```
-packet, RTC_time, gps_lat, gps_lon, gps_speed, temp, pressure, altitude, roll, pitch, accel_x/y/z, gyro_x/y/z
-```
-
-> ⚠️ **Note before making this repo public:** `ESP32_SUPERMINI.ino` and `ESP32_CAM.ino` currently have a Wi-Fi SSID/password hardcoded for the CAM's local access point. It's a low-risk local AP (not a real network), but if you'd like, I can move it into a `secrets.h` (gitignored) before you push — just say the word.
-
-## 🧮 Recovery System — Parachute Sizing
-
-The hexagonal flat parachute was sized using the drag-equation balance (F_gravity = F_drag), targeting a 5 m/s descent rate at 350 g mass:
-
-D = √(8mg / (π·C_d·ρ·v²)) ≈ 591 mm → hexagon side length ≈ 324 mm
-
-Full derivation: [`docs/Final_Project_Report.pdf`](docs/Final_Project_Report.pdf) (Section 6-2).
-
-## 📁 Repo Structure
-
-```
-├── firmware/              # Arduino/C++ source for CanSat + Ground Station
-│   ├── ESP32_CAM/
+~~~text
+remote-sensing-communication-cansat/
+├── firmware/
 │   ├── ESP32_SUPERMINI/
+│   │   ├── ESP32_SUPERMINI.ino
+│   │   ├── Sensors.cpp
+│   │   └── Sensors.h
+│   ├── ESP32_CAM/
+│   │   ├── ESP32_CAM.ino
+│   │   └── camera_pins.h
 │   └── GCS/
+│       └── GCS.ino
 ├── hardware/
-│   ├── pcb/                    # Altium schematic + PCB layout files
-│   └── subsystem-schematics/   # Block diagrams (power, comm, sensor, structure, recovery, GCS)
+│   ├── pcb/
+│   │   ├── CANSAT_COMMUNICATION/
+│   │   ├── CANSAT_CONTROLLER/
+│   │   ├── CANSAT_EPS/
+│   │   └── CANSAT_SENSOR/
+│   └── subsystem-schematics/
 ├── docs/
-│   └── certificates/      # Award certificate PDF scans
-└── media/
-    └── certificates/      # Award certificate images (shown below)
-```
+│   ├── PDR.docx
+│   ├── CDR.docx
+│   ├── Final_Project_Report.pdf
+│   ├── Competition_Guidelines.pdf
+│   └── certificates/
+├── Cansat final images/
+└── README.md
+~~~
 
-## 🎥 Flight Test Video & Photos
+### Firmware directories
 
-📹 [Watch the flight test video and view build photos](https://drive.google.com/drive/u/0/folders/1vkQAq4ylp5WScTySMpFzcRtd9SzQPtEW) *(hosted on Google Drive due to file size)*
+- **ESP32_SUPERMINI:** sensor and telemetry-oriented firmware, with shared sensor routines in Sensors.cpp / Sensors.h.
+- **ESP32_CAM:** camera capture and image-file handling code.
+- **GCS:** LoRa receiver / serial-output sketch.
 
-## 🏅 Certificates & Recognition
+These files document the team implementation. Their presence in the repository does not mean every part was individually authored by the project lead.
 
-<p align="center">
-  <img src="media/certificates/iran_cansat_2nd_place.jpg" alt="2nd Place - 10th International Iran CanSat Competition" width="45%">
-  <img src="media/certificates/best_project_award_SITT.jpg" alt="Best Project Award - SITT Final Year Projects 2024" width="45%">
-</p>
+### Hardware directories
 
-- **2nd Place**, Remote Sensing-Communication class — 10th International Iran CanSat Competition 2024, Aerospace Research Institute
-- **Best Project Award**, SITT Final Year Projects 2024, awarded by SUPARCO Institute of Technical Training
+The hardware/pcb folder stores the Altium project files and related design outputs for the communication, controller, electrical power and sensor boards.
 
-Full-resolution scans: [`docs/certificates`](docs/certificates)
-
-## 📄 Documentation
+## Documentation
 
 - [Preliminary Design Review (PDR)](docs/PDR.docx)
 - [Critical Design Review (CDR)](docs/CDR.docx)
-- [Final Project Report](docs/Final_Project_Report.pdf) — full design rationale, test results, and complete firmware listing
+- [Final Project Report](docs/Final_Project_Report.pdf)
 - [Competition Guidelines](docs/Competition_Guidelines.pdf)
+- [Award certificates](docs/certificates/)
+
+## Build photographs
+
+Selected photographs from the final CanSat build are stored in the [Cansat final images](Cansat%20final%20images/) folder.
+
+## Security note
+
+The current firmware files have been cleaned of unused hard-coded Wi-Fi credential declarations. Earlier repository history may still contain the previous values. If those credentials were ever used on real hardware, rotate them. Removing a secret from the latest commit does not erase it from earlier Git commits; a repository-history rewrite would be required to purge historical copies.
+
+Do not commit passwords, API keys, private network credentials or other secrets in future firmware updates.
+
+## Tools and technologies
+
+ESP32, Arduino-style C/C++, BMP280, MPU6050, GPS interfacing, LoRa, ESP32-CAM, Altium Designer, PCB assembly, soldering, electronics testing and subsystem documentation.
 
 ---
-*This project was developed as part of the Diploma Associate Engineering (Electronics) program, specifically for taking part and competing in the 10th International Iran Cansat competition, submitted October 2024.*
+
+This project was completed by the SITTians team as part of the Electronics diploma program at SUPARCO Institute of Technical Training and submitted for the 10th International Iran CanSat Competition 2024.
